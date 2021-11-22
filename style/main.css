@@ -75,6 +75,7 @@ a{
 .top-menu-fixed__element
 {
     display: flex;
+    justify-content: space-around;
 }
 .element__menu-hamburger
 {
@@ -97,6 +98,7 @@ a{
 
 .fixed-logo svg
 {
+    margin-top:1em;
     width: 18em;
     fill:hsl(0, 0%, 100%);
 }
