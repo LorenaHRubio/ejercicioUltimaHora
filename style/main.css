@@ -72,7 +72,7 @@ a{
 =========================*/
 .top-menu-fixed
 {
-    background:hsl(0, 84%, 55%);
+    background:hsl(0, 100%, 40%);
 }
 .top-menu-fixed__element
 {
@@ -131,6 +131,11 @@ a{
     width: 1.5em;
 }
 
+#register{
+    font-style: italic;
+    font-weight: bold;
+    margin:1em 1em 0.5em 1em;
+}
 #color-yellow{
     background: hsl(47, 100%, 50%);
 }
