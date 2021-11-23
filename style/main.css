@@ -17,6 +17,13 @@ a{
     background-color: transparent;
 }
 
+.inline li{
+    display: inline;
+}
+
+img{
+    width: 100%;
+}
 
 /*======================
 ========Nav TOP=========
@@ -24,20 +31,23 @@ a{
 
 .top-menu
 {
+    position: fixed;
+    z-index: 1001;
     display: flex;
-    flex-wrap: wrap;
     background-color: hsl(0, 0%, 90%);
     height: 4vh;
-    width: 76%;
-    padding: 0 24%;
+    width:60%;
+    padding: 0 20%;
+    justify-content: space-between;
+    top: -1%;
 }
+
 
 .local-new__list, .trending-new__list
 {
     font-size: small;
-    margin-top: -0.4em;
+    padding: 0;
     display: flex;
-    flex-wrap: wrap;
 }
 .trending-new__list li
 {
@@ -60,23 +70,26 @@ a{
 =========================*/
 .top-menu-fixed
 {
-    height: 100%;
+    position: fixed;
+    z-index: 1001;
     background:hsl(0, 100%, 40%);
+    width: 100%;
+    top: 2.8%;
 }
 .top-menu-fixed__element
 {
     display: flex;
-    justify-content: space-around;
-    width: 80%;
-    padding: 0 10%;
+    justify-content: space-between;
+    width: 60%;
+    padding: 0 20%;
 }
-.element__menu-hamburger
+.element__draw-menu-hamburger
 {
-    padding: 2vh;
+    margin: auto 0;
     cursor: pointer;
     position: relative;
 }
-.element__menu-hamburger span
+.element__draw-menu-hamburger span
 {
     display: block;
     background: hsl(0, 0%, 100%);
@@ -84,24 +97,94 @@ a{
     height: 0.5vh;
     margin-top: 0.5em;
 }
-
-.drop-down-list
+.search-icon svg
 {
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    z-index: 1001;
+    fill:hsl(0, 0%, 100%);
+    padding-top: 0.2em;
+    width: 1em;
     
 }
-.drop-down-list a
+#terms
+{
+    width: 100%;
+    background-color: #333;
+    border: 0;
+    color: #fff;
+    padding: 0.45rem 0 0.45rem 0.2rem;
+    background-color: transparent;
+}
+.search-menu
+{
+    display: flex;
+}
+.element__menu-hamburger
+{
+    
+    background: hsl(0, 0%, 0%);
+    position: fixed;
+    z-index: 1001;
+    overflow: hidden;
+    top: 11.5%;
+    left: 20%;
+    border-bottom: 0.5rem solid hsl(0, 100%, 40%);
+}
+.menu-hamburger-list
+{
+    width: 30em;
+}
+.item-menu-hamburger
+{
+    color:hsl(0, 0%, 100%);
+    border-bottom: 1px solid hsl(0, 0%, 35%);
+    padding: 0.5em;
+}
+.button-hamburger
+{
+    display: flex;
+    background-color:transparent;
+    border: none;    
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    width: 100%;
+    flex-direction: column;
+}
+
+.social-media{
+    
+    padding: 0.5rem 1.5rem; 
+}
+.social-media svg{
+    height: 1.5rem;
+}
+
+.social-media svg path{
+    fill: hsl(0, 0%, 100%);
+}
+
+.social-media ul li{
+    margin-right: 0.5rem;
+}
+
+.social-media ul li:first-child {
+    color: hsl(0, 0%, 100%);
+    font-family: "Roboto Condensed";
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.contact-ad
+{
+    padding: 1rem 0;
+}
+.contact-ad__botton a
 {
     color: hsl(0, 0%, 100%);
 }
-.item-drop-down
-{
-    color:hsl(0, 0%, 100%);
-    border-bottom-style: solid;
-}
-
 .fixed-logo svg
 {
     margin-top:1em;
@@ -112,39 +195,46 @@ a{
 .user-login
 {
     display: flex;
-}
-.button-user
-{
-    height: 2.5rem;
-    margin:1.5em 1em 0 1em;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
-}
-#color-gray
-{
-    background: hsl(0, 0%, 90%);
-}
-.login-button span
-{
-    vertical-align: super;
-    margin:1em 0em 0.5em 1em;
-}
-.login-button svg
-{
-    margin-top: .5em;
-    margin-right: 1em;
-    width: 1.5em;
+    gap: 0.5rem;
 }
 
-#register{
-    font-style: italic;
-    font-weight: bold;
-    margin:1em 1em 0.5em 1em;
+.button-user
+{
+    margin: auto 0;
+    border-radius: 0.5em;
 }
-#color-yellow{
-    background: hsl(47, 100%, 50%);
+
+.button-user .login{
+    background-color: hsl(207, 17%, 88%);
+    border: 0.3rem solid hsl(0, 100%, 40%);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.button-user .login span{
+    display: inline;
+    font-size: 0.9rem;
+    vertical-align: super;
+}
+
+.button-user .login svg {
+    overflow: hidden;
+    height: 1.5rem;
+}
+
+.button-user .register{
+    background-color:hsl(47, 100%, 50%);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.button-user .register span{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 600;
 }
 
 /*==========================
@@ -152,15 +242,23 @@ a{
 ==========================*/
 .menu-inline
 {
+    position: fixed;
+    z-index: 1001;
     height: 3vh;
-    justify-content: space-between;
-    width: 90%;
-    padding: 0 3.5%;
+    border-bottom: solid;
+    color:  hsl(0, 1%, 81%);
+    background-color: hsl(0, 0%, 90%);
+    margin-top: 0.3em;
+    width: 60%;
+    padding: 0 20%;
+    top: 9.7%;
 }
 .menu-inline__list
 {
     display: flex;
-    background-color: hsl(0, 0%, 90%);
+    text-align:center;
+    margin-top: .1em;
+    justify-content: space-between;
 }
 #icon-menu svg
 {
@@ -169,5 +267,71 @@ a{
 
 .item-menu-inline
 {
-    margin:0.2em;
+    font-family: "Roboto Condensed";
+    font-size: .96rem;
+}
+/*==============================
+========TIPOGRAPHY MENU=========
+==============================*/
+.item-menu-inline, .menu-hamburger-list, .content-subtitle
+{
+    text-transform: uppercase;
+}
+/*===================
+========MAIN=========
+===================*/
+main{
+    padding-top: .5em;
+}
+.main-element{
+    display: flex;
+    flex-direction: column;
+}
+.ad-fixed-menu-sticky{
+    width: 20%;
+    padding: 0 20%;
+}
+#top-sticky-ad{
+    z-index: 1001;
+    position:fixed;
+    top: 30%;
+    left: 38%;
+}
+.ad-fixed-left{
+    position: fixed;
+    left: 0;
+    width: 20%;
+}
+.ad-fixed-right{
+    position: fixed;
+    right: 0;
+    width: 20%;
+}
+.ad-top{
+    padding-left: 1em;
+}
+.top-new, .ad-top
+{
+    width: 60%;
+    padding: 0 20%;
+}
+.top-new__image, .top-new__content{
+    width: 60%;
+    padding-left: 1em;
+}
+.content-subtitle a
+{
+    display:stick
+    font-size: .85rem;
+    color: hsl(0, 100%, 40%);
+}
+.content-title a{
+    font-size: 2.44rem;
+    font-weight: bold;
+}
+.content-title a:hover{
+    color: hsl(0, 100%, 40%);
+}
+.content-author p{
+    color: hsl(0, 0%, 33%);
 }
