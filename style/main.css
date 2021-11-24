@@ -10,7 +10,9 @@ body{
     text-align: left;
     font-family: Roboto,"Helvetica Neue",Arial;
 }
-
+header{
+    height: 15vh;
+}
 a{
     color: hsl(210, 11%, 15%);
     text-decoration: none;
@@ -39,7 +41,7 @@ img{
     width:60%;
     padding: 0 20%;
     justify-content: space-between;
-    top: -1%;
+    top: -1vh;
 }
 
 
@@ -74,7 +76,8 @@ img{
     z-index: 1001;
     background:hsl(0, 100%, 40%);
     width: 100%;
-    top: 2.8%;
+    top: 3vh;
+    padding-bottom: 1em;
 }
 .top-menu-fixed__element
 {
@@ -115,7 +118,8 @@ img{
 }
 .search-menu
 {
-    display: flex;
+    width: 100%;
+    display: inline-flex;
 }
 .element__menu-hamburger
 {
@@ -124,13 +128,14 @@ img{
     position: fixed;
     z-index: 1001;
     overflow: hidden;
-    top: 11.5%;
+    top: 12vh;
     left: 20%;
-    border-bottom: 0.5rem solid hsl(0, 100%, 40%);
+    width: 30%;
+    border-bottom: 2px solid hsl(0, 100%, 40%);
 }
 .menu-hamburger-list
 {
-    width: 30em;
+    width: 100%;
 }
 .item-menu-hamburger
 {
@@ -243,21 +248,17 @@ img{
 .menu-inline
 {
     position: fixed;
-    z-index: 1001;
-    height: 3vh;
     border-bottom: solid;
     color:  hsl(0, 1%, 81%);
     background-color: hsl(0, 0%, 90%);
-    margin-top: 0.3em;
     width: 60%;
     padding: 0 20%;
-    top: 9.7%;
+    top: 11.2vh;
+    height: 5vh;
 }
 .menu-inline__list
 {
     display: flex;
-    text-align:center;
-    margin-top: .1em;
     justify-content: space-between;
 }
 #icon-menu svg
@@ -294,18 +295,19 @@ main{
 #top-sticky-ad{
     z-index: 1001;
     position:fixed;
-    top: 30%;
+    top: 50vh;
     left: 38%;
 }
-.ad-fixed-left{
+.ad-fixed{
+    margin-top: 1em;
     position: fixed;
-    left: 0;
     width: 20%;
 }
-.ad-fixed-right{
-    position: fixed;
+#ad-fixed-right{
     right: 0;
-    width: 20%;
+}
+#ad-fixed-left{
+    left: 0;
 }
 .ad-top{
     padding-left: 1em;
@@ -318,6 +320,9 @@ main{
 .top-new__image, .top-new__content{
     width: 60%;
     padding-left: 1em;
+}
+.top-new__content{
+    margin-bottom: 3em;
 }
 .content-subtitle a
 {
