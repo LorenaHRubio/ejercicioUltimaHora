@@ -322,7 +322,7 @@ main{
 }
 .content-subtitle a
 {
-    display:stick
+    
     font-size: .85rem;
     color: hsl(0, 100%, 40%);
 }
@@ -335,7 +335,4 @@ main{
 }
 .content-author p{
     color: hsl(0, 0%, 33%);
-}
-.new-separation{
-    
 }
