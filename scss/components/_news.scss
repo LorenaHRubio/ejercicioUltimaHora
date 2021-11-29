@@ -1,0 +1,27 @@
+.top-new
+{
+    width: 60%;
+    padding: 0 20%;
+}
+.top-new__image, .top-new__content{
+    width: 60%;
+    padding-left: 1em;
+}
+.top-new__content{
+    margin-bottom: 3em;
+}
+.content-subtitle a
+{
+    font-size: .85rem;
+    color: hsl(0, 100%, 40%);
+}
+.content-title a{
+    font-size: 2.44rem;
+    font-weight: bold;
+}
+.content-title a:hover{
+    color: hsl(0, 100%, 40%);
+}
+.content-author p{
+    color: hsl(0, 0%, 33%);
+}

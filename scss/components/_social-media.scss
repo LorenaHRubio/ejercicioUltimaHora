@@ -1,0 +1,22 @@
+.social-media{
+    
+    padding: 0.5rem 1.5rem; 
+}
+.social-media svg{
+    height: 1.5rem;
+}
+
+.social-media svg path{
+    fill: hsl(0, 0%, 100%);
+}
+
+.social-media ul li{
+    margin-right: 0.5rem;
+}
+
+.social-media ul li:first-child {
+    color: hsl(0, 0%, 100%);
+    font-family: "Roboto Condensed";
+    font-weight: 600;
+    font-size: 1rem;
+}

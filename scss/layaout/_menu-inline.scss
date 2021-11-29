@@ -1,0 +1,26 @@
+.menu-inline
+{
+    position: fixed;
+    border-bottom: solid;
+    color:  hsl(0, 1%, 81%);
+    background-color: hsl(0, 0%, 90%);
+    width: 60%;
+    padding: 0 20%;
+    top: 11.2vh;
+    height: 5vh;
+}
+.menu-inline__list
+{
+    display: flex;
+    justify-content: space-between;
+}
+#icon-menu svg
+{
+    width: 1.5em;
+}
+
+.item-menu-inline
+{
+    font-family: "Roboto Condensed";
+    font-size: .96rem;
+}

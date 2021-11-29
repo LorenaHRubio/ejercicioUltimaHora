@@ -1,0 +1,29 @@
+.main-element{
+    display: flex;
+    flex-direction: column;
+}
+.ad-fixed-menu-sticky{
+    width: 20%;
+    padding: 0 20%;
+}
+#top-sticky-ad{
+    z-index: 1001;
+    position:fixed;
+    top: 50vh;
+    left: 38%;
+}
+.ad-fixed{
+    margin-top: 1em;
+    position: fixed;
+    width: 20%;
+}
+#ad-fixed-right{
+    right: 0;
+}
+#ad-fixed-left{
+    left: 0;
+}
+.ad-top{
+    width: 50%;
+    padding: 0 25%;
+}
