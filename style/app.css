@@ -403,18 +403,65 @@ a:hover, a:focus {
   text-transform: uppercase;
 }
 
-.element__draw-menu-hamburger {
-  margin: auto 0;
-  cursor: pointer;
-  position: relative;
+.progress-container {
+  position: fixed;
+  top: 12vh;
+  background-color: white;
+  height: 0.5vh;
+  width: 100%;
+  z-index: 1000;
 }
 
-.element__draw-menu-hamburger span {
-  display: block;
-  background: white;
-  width: 2.5em;
+.progress-bar {
+  background-color: #990000;
   height: 0.5vh;
-  margin-top: 0.5em;
+  width: 0;
+}
+
+.element__draw-menu-hamburger {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  outline: inherit;
+  padding: 0;
+  position: relative;
+  text-indent: -9999px;
+  width: 2rem;
+}
+.element__draw-menu-hamburger:before, .element__draw-menu-hamburger:after,
+.element__draw-menu-hamburger span:before, .element__draw-menu-hamburger span:after {
+  background-color: white;
+  border-radius: 15px;
+  content: "";
+  display: block;
+  height: 7.5%;
+  opacity: 1;
+  position: absolute;
+  transition: ease-in-out all 0.15s;
+  width: 100%;
+}
+.element__draw-menu-hamburger:before {
+  top: 30%;
+}
+.element__draw-menu-hamburger:after {
+  bottom: 30%;
+}
+.element__draw-menu-hamburger span:before, .element__draw-menu-hamburger span:after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.element__draw-menu-hamburger.--active:before, .element__draw-menu-hamburger.--active:after {
+  display: none;
+}
+.element__draw-menu-hamburger.--active span:before {
+  transform: rotate(45deg);
+}
+.element__draw-menu-hamburger.--active span:after {
+  transform: rotate(-45deg);
 }
 
 .search-icon svg {
@@ -423,7 +470,7 @@ a:hover, a:focus {
 }
 
 #terms {
-  background-color: #333;
+  background-color: #333333;
   border: 0;
 }
 
@@ -440,14 +487,41 @@ a:hover, a:focus {
 }
 
 .element__menu-hamburger {
-  background: black;
+  border-bottom: 0.5rem solid #cc0000;
   position: fixed;
-  z-index: 1001;
+  left: 15em;
+  top: -80vh;
+  transition: top 0.3s;
+  width: 40%;
+  z-index: 1003;
+  background: black;
   overflow: hidden;
+  border-bottom: 2px solid #990000;
+}
+.element__menu-hamburger.--active {
   top: 12vh;
-  left: 20%;
-  width: 30%;
-  border-bottom: 2px solid #cc0000;
+}
+.element__menu-hamburger .hamburguer__menu-search {
+  background-color: #333333;
+  display: flex;
+  padding: 0.5rem 1.5rem;
+}
+.element__menu-hamburger .hamburguer__menu-search button {
+  background-color: #333333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  padding: 0;
+}
+.element__menu-hamburger .hamburguer__menu-search input {
+  background-color: #333333;
+  border: none;
+  font-family: "Roboto";
+  color: white;
+  outline: none;
+  padding: 0.3rem;
+  width: 100%;
 }
 
 .menu-hamburger-list, .search-menu input {
@@ -455,9 +529,7 @@ a:hover, a:focus {
 }
 
 .item-menu-hamburger {
-  color: white;
-  border-bottom: 1px solid #595959;
-  width: 95%;
+  border-bottom: 1px solid #b3b3b3;
   padding: 1% 5%;
 }
 
@@ -525,6 +597,21 @@ a:hover, a:focus {
   color: #545454;
 }
 
+#overlay {
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+#overlay.--active {
+  opacity: 0.5;
+}
+
 .main-element {
   display: flex;
   flex-direction: column;
@@ -536,7 +623,7 @@ a:hover, a:focus {
 }
 
 #top-sticky-ad {
-  z-index: 1001;
+  z-index: 100;
   position: fixed;
   top: 50vh;
   left: 38%;
@@ -558,7 +645,7 @@ a:hover, a:focus {
 
 .ad-top {
   width: 50%;
-  padding: 0 25%;
+  padding: 2vh 25%;
 }
 
 /*=========================
@@ -566,7 +653,7 @@ a:hover, a:focus {
 =========================*/
 .top-menu-fixed {
   position: fixed;
-  z-index: 1001;
+  z-index: 1004;
   background: #cc0000;
   width: 100%;
   top: 3vh;
@@ -578,96 +665,6 @@ a:hover, a:focus {
   justify-content: space-between;
   width: 60%;
   padding: 0 20%;
-}
-
-.element__draw-menu-hamburger {
-  margin: auto 0;
-  cursor: pointer;
-  position: relative;
-}
-
-.element__draw-menu-hamburger span {
-  display: block;
-  background: white;
-  width: 2.5em;
-  height: 0.5vh;
-  margin-top: 0.5em;
-}
-
-.search-icon svg {
-  fill: white;
-  width: 1em;
-}
-
-#terms {
-  background-color: #333;
-  border: 0;
-}
-
-.search-menu {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 95%;
-  padding: 2% 5% 0;
-}
-
-.search-menu form {
-  width: 100%;
-}
-
-.element__menu-hamburger {
-  background: black;
-  position: fixed;
-  z-index: 1001;
-  overflow: hidden;
-  top: 12vh;
-  left: 20%;
-  width: 30%;
-  border-bottom: 2px solid #cc0000;
-}
-
-.menu-hamburger-list, .search-menu input {
-  width: 100%;
-}
-
-.item-menu-hamburger {
-  color: white;
-  border-bottom: 1px solid #595959;
-  width: 95%;
-  padding: 1% 5%;
-}
-
-.button-hamburger {
-  background-color: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-  width: 100%;
-  flex-direction: column;
-}
-
-.social-media {
-  padding: 0.5rem 1.5rem;
-}
-
-.social-media svg {
-  height: 1.5rem;
-}
-
-.social-media svg path {
-  fill: white;
-}
-
-.social-media ul li {
-  margin-right: 0.5rem;
-}
-
-.social-media ul li:first-child {
-  color: white;
-  font-family: "Roboto Condensed";
-  font-weight: 600;
-  font-size: 1rem;
 }
 
 .contact-ad {
@@ -757,7 +754,7 @@ a:hover, a:focus {
 ======================*/
 .top-menu {
   position: fixed;
-  z-index: 1001;
+  z-index: 1004;
   display: flex;
   background-color: #e6e6e6;
   height: 4vh;
